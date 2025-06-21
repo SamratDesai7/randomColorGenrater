@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+            height: 300px;
+            width: 300px;
+            margin: auto;
+            border: 2px solid black;
+            margin-top: 1rem;
+            border-radius: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<h3> Genrate Random Color</h3>
+<h3 id="h3"> RGB(,,)</h3>
+<button id="btn">Genrate</button>
+<div id="col"></div>
+
+<body>
+    <script>
+        let h3 = document.getElementById("h3")
+        let btn = document.getElementById("btn")
+        let col = document.getElementById("col")
+        btn.addEventListener("click", Color);
+        let R;
+        let G;
+        let B;
+        function Color() {
+            R = Math.floor(Math.random() * 255)
+            G = Math.floor(Math.random() * 255)
+            B = Math.floor(Math.random() * 255)
+            h3.innerText = (`RGB( ${R}, ${G}, ${B} )`)
+            col.style.backgroundColor = `RGB(${R}, ${G}, ${B})`
+        }
+    </script>
+</body>
+
+</html>
